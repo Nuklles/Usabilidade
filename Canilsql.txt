@@ -1,0 +1,43 @@
+Create table usuario_pessoa(
+Nome varchar(100),
+cpf varchar(12),
+telefone varchar (30),
+email varchar (100),
+CONSTRAINT pk_id_cpf PRIMARY KEY
+(id_cpf)
+);
+
+Create table usuario_canil(
+Nome varchar(100),
+cnpj varchar(100),
+telefone varchar (30),
+email varchar (100),
+CONSTRAINT pk_id_cnpj PRIMARY KEY
+(id_cnpj)
+);
+
+Create table cadastrar_animal(
+id_animal integer,
+nome varchar(100),
+idade varchar (70),
+raca varchar(100),
+tipologia varchar (100),
+CONSTRAINT pk_id_animal PRIMARY KEY
+(id_animal)
+);
+
+Create table cadastro (
+id_animal integer,
+cpf varchar(12),
+cnpj varchar(100),
+CONSTRAINT pk_id_animal PRIMARY KEY
+(id_animal),
+CONSTRAINT pk_id_cpf PRIMARY KEY
+(id_cpf),
+CONSTRAINT pk_id_cnpj PRIMARY KEY
+(id_cnpj),
+FOREIGN KEY (cpf) REFERENCES
+cpf (id_cpf),
+FOREIGN KEY (cnpj) REFERENCES
+cnpj (id_cnpj)
+);
