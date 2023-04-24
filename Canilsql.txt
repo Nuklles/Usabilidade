@@ -1,3 +1,6 @@
+Create database Canil;
+Use Canil;
+
 Create table usuario_pessoa(
 Nome varchar(100),
 cpf varchar(12),
