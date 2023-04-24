@@ -53,3 +53,27 @@ VALUES
 
 INSERT INTO cadastro (id_animal, id_cpf, id_cnpj)
 VALUES (25, 1, 2);
+
+ CREATE TABLE login (
+usuario_pessoa varchar(50),
+login VARCHAR(50),
+senha varchar(50),
+CONSTRAINT pk_login PRIMARY KEY (usuario_pessoa)
+);
+ set sql_safe_updates=1;
+ SET forign_key_checks=1
+ ;
+insert into login (usuario_pessoa , login, senha)
+values ('2022100001', 'aluno', '123456');
+
+CREATE TABLE login1 (
+usuario_canil varchar(50),
+login1 VARCHAR(50),
+senha varchar(50),
+CONSTRAINT pk_login PRIMARY KEY (usuario_canil)
+);
+ set sql_safe_updates=2;
+ SET forign_key_checks=2;
+
+insert into login1 (usuario_canil , login1, senha)
+values ('2022100001', 'aluno', '123456');
