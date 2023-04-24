@@ -2,6 +2,7 @@ Create database Canil;
 Use Canil;
 
 Create table usuario_pessoa(
+id_cpf integer,
 Nome varchar(100),
 cpf varchar(12),
 telefone varchar (30),
@@ -11,6 +12,7 @@ CONSTRAINT pk_id_cpf PRIMARY KEY
 );
 
 Create table usuario_canil(
+id_cnpj integer,
 Nome varchar(100),
 cnpj varchar(100),
 telefone varchar (30),
@@ -36,11 +38,31 @@ cnpj varchar(100),
 CONSTRAINT pk_id_animal PRIMARY KEY
 (id_animal),
 CONSTRAINT pk_id_cpf PRIMARY KEY
-(id_cpf),
+(usuario_pessoa),
 CONSTRAINT pk_id_cnpj PRIMARY KEY
-(id_cnpj),
-FOREIGN KEY (cpf) REFERENCES
-cpf (id_cpf),
-FOREIGN KEY (cnpj) REFERENCES
-cnpj (id_cnpj)
+(usuario_canil),
+FOREIGN KEY (id_cpf) REFERENCES
+cpf (usuario_pessoa),
+FOREIGN KEY (id_cnpj) REFERENCES
+cnpj (usuario_canil)
 );
+
+INSERT INTO usuario_pessoa (id_cpf, Nome, cpf, telefone, email)
+VALUES
+(1, 'Rafael','84576521434','61954872496', 'rafael@gmail.com'),
+(2, 'Joelma','13245869842','21984536854', 'joelma@gmail.com');
+
+
+INSERT INTO usuario_canil (id_cnpj, Nome, cnpj, telefone, email)
+VALUES
+(1, 'Canil do grau','00014981439','88954762351', 'graucanil@gmail.com'),
+(2, 'gatos da luci','00010000896','41987523654', 'gatosdaluci@gmail.com');
+
+INSERT INTO cadastrar_animal (id_animal, nome, idade, raca, tipologia)
+VALUES
+(25, 'caramelo', '2', 'vira lata', 'cachorro'),
+(45, 'gato', '6', 'vira lata', 'gato');
+
+INSERT INTO cadastro (id_animal, cpf, cnpj)
+VALUES
+(25, '84576521434', '00010000896');
