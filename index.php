@@ -11,7 +11,12 @@
 		Login: <input type="text" name="login" required><br>
 		Senha: <input type="password" name="senha" required><br>
 		<input type="submit" name="enviar" value="Entrar"> 
-	</form>
+	
+    <h1>Menu</h1>
+	
+	<ul>
+		<li><a href="Logincnpj.php">Entrar com cnpj</a></li>
+        </form>
 	</center>
 </body>
 </html>
