@@ -65,7 +65,7 @@ CONSTRAINT pk_login PRIMARY KEY (usuario_pessoa)
 );
 
 set sql_safe_updates=1;
-SET forign_key_checks=1;
+SET foreign_key_checks=1;
 
 insert into login (usuario_pessoa , login, senha)
 values ('2022100001', 'aluno', '123456');
